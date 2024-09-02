@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+<link rel="stylesheet" href="./styles.css">
+  <title>Weather_App</title>
+</head>
+<body>
+
+  <div class="weather-app">
+
+    <h1 class="intro">Welcome to the Weather app</h1>
+
+    <header>
+      <form id="search-form">
+        <input id="form-input" type="text" placeholder="Enter your city..." required>
+        <input id="answer" type="button" value="Search">
+      </form>
+    </header>
+   
+
+    <main>
+
+      <div id="weather-div">
+
+        <div class="weather-details">
+          <h1 class="current-city" id="city"></h1>
+          <p class="curr-deets">
+            <span id="time"></span>
+            <span id="description"></span><br/>
+            Humidity: <strong class="humid" id="humid"></strong>, Wind: <strong class="wind" id="wind"></strong>
+          </p>
+        </div>
+        
+        <div class="current-weather">
+          <br>
+          <div class="weather-icon" id="weather-icon">
+          </div>
+          <span id="temperature"></span>
+          <span id="metric">°C</span>
+        </div>
+      </div>
+
+      <div class="weather-forecast">
+
+        <div class="day-one">
+          <div class="weather-day">Sun</div>
+          <div class="daily-icon">🌦️</div>
+          <div class="weather-values">
+            <div class="weather-temp"><strong>12</strong></div>
+            <div class="weather-temp">06</div>
+          </div>
+
+        </div>
+
+        <div class="day-two">
+
+          <div class="weather-day">Mon</div>
+          <div class="daily-icon">🌦️</div>
+          <div class="weather-values">
+            <div class="weather-temp"><strong>22</strong></div>
+            <div class="weather-temp">16</div>
+          </div>
+
+        </div>
+
+        <div class="day-three">
+
+          <div class="weather-day">Tue</div>
+          <div class="daily-icon">🌦️</div>
+          <div class="weather-values">
+            <div class="weather-temp"><strong>22</strong></div>
+            <div class="weather-temp">16</div>
+          </div>
+
+        </div>
+
+        <div class="day-four">
+
+          <div class="weather-day">Wed</div>
+          <div class="daily-icon">🌦️</div>
+          <div class="weather-values">
+            <div class="weather-temp"><strong>22</strong></div>
+            <div class="weather-temp">16</div>
+          </div>
+
+        </div>
+          
+
+          
+
+       
+
+        
+
+    </div>
+
+
+     
+
+          <!-- <div class="days">
+          <div class="weather-day">Mon</div>
+          <div class="daily-icon">🌦️</div>
+          <div class="weather-values">
+            <div class="first-temp"><strong>30</strong></div>
+            <div class="second-temp">14</div>
+          </div>
+  
+          <div class="days">
+          <div class="weather-day">Tue</div>
+          <div class="daily-icon">🌦️</div>
+          <div class="weather-values">
+            <div class="first-temp"><strong>20</strong></div>
+            <div class="second-temp">14</div>
+          </div>
+  
+          <div class="weather-day">Wed</div>
+          <div class="daily-icon">🌦️</div>
+          <div class="weather-values">
+            <div class="first-temp"><strong>20</strong></div>
+            <div class="second-temp">14</div>
+          </div>
+
+        </div> -->
+       
+     
+    
+
+    </main>
+
+    <footer>
+      Built by <a href="https://github.com/Annie24-ux/">Siphesihle ❤️</a> <br>
+      And is on <a href="https://github.com/Annie24-ux/Weather-App" target="_blank">Github</a> hosted on <a href="https://allweatherchecker.netlify.app" target="_blank">Netlify</a>
+  </footer>
+
+
+  </div>
+    <script src="./index.js"></script>
+  
+</body>
+</html>
