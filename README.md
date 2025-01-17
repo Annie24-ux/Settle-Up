@@ -1,18 +1,33 @@
+# Settle Up: Simplifying Social Debt Settlement
 
----
+Settle Up is a web application designed to facilitate easy and seamless settlement of debts between individuals in social settings. Whether it's splitting dinner bills, sharing transport costs, or reimbursing friends for expenses, Settle Up makes it effortless to manage and settle debts.
 
-## Weather App
-Welcome to the Weatherly app!
+# How it Works
+1. User Login: Users log in to the web application using their email address.
+2. Dashboard: Upon login, users are directed to a dashboard displaying a list of people they owe and those who owe them.
+3. Payment Requests: Users can send payment requests to individuals who owe them, and receive requests from those they owe.
+4. Settlement: Users can settle debts by making payments to those they owe.
 
-### Description
-This Weather App allows you to check the current weather conditions by entering the name of any city. The app provides the following details:
+# Features
+- Easy login process
+- User-friendly dashboard for tracking debts and payments
+- Simple payment request and settlement process
+- Secure and reliable payment processing
 
-- **Temperature**: Current temperature in the city.
-- **Weather Icon**: A visual representation of the weather conditions (e.g., sunny, cloudy, rainy).
-- **Date**: The date and time of the weather data.
-- **Humidity**: The percentage of humidity in the air.
-- **Wind Speed**: The speed of the wind in the selected city.
+# Technical Details
+- Frontend: Built using JavaScript, HTML, CSS, and Tailwind CSS
+- Backend: Powered by Java and JavaScript, with database integration
+- Database: [Specify database management system used]
 
-Simply input the city name, and the app will retrieve and display these weather details.
+# Benefits
+- Eliminates the hassle of tracking and settling debts
+- Encourages transparency and accountability in social transactions
+- Provides a secure and reliable platform for payment processing
 
----
+# Getting Started
+To get started with Settle Up, simply log in to the web application using your email address. From there, you can explore the dashboard, send payment requests, and settle debts with ease.
+
+# Contributing
+We welcome contributions to Settle Up! If you're interested in reporting bugs, suggesting features, or contributing code, please visit https://github.com/Annie24-ux/Settle-Up.git
+.
+
