@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head></head>
+<body>
+<div layout:fragment="contents">
+    <section class="expenseList">
+        <h2>People that you owe</h2>
+
+        <table>
+            <tr>
+                <th>Who</th>
+                <th>What</th>
+                <th>Due in (days)</th>
+                <th>How Much</th>
+            </tr>
+            <thead>
+            </thead>
+            <tbody>
+            <tr th:each="request:${paymentRequestsReceived}">
+                <td th:id="paymentrequest_who_" th:text="${request.getPersonWhoShouldPayBack.getName}"></td>
+                <td th:id="paymentrequest_what_" th:text="${request.getDescription}"></td>
+                <td th:id="paymentrequest_Due_" th:text="${request.daysLeftToPay}"></td>
+                <td th:id="paymentrequest_amount_" th:text="${request.getAmountToPay}"></td>
+                <td th:if="${request.isPaid() == false}">
+                    <form method="post" action="/payment.action">
+                        <input th:id="${request.id}" name="payment" type="hidden" th:value="${request.id}">
+                        <input id="pay" name="pay" type="submit" value="pay"/>
+                    </form>
+                </td>
+                <td th:if="${request.isPaid() == true}" th:id="'paid_' + ${requestStat.index+1}">
+                    <input checked type="checkbox">
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <th>Total Unpaid</th>
+            <td></td>
+            <td></td>
+            <td id="grand_total" th:text="${grand_total}"></td>
+            </tfoot>
+        </table>
+
+
+
+        <p id="no_payment_requests_received" th:if="${#lists.isEmpty(paymentRequestsReceived)}">You don't owe anyone anything!</p>
+    </section>
+</div>
+</body>
+
+</html>

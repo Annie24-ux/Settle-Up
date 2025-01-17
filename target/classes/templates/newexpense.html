@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head></head>
+<body>
+<div layout:fragment="contents">
+        <section class="expenseList">
+
+        <form action="/expense.action" method="post">
+        
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" placeholder="Enter description" required>
+                <br>
+
+                <label for="date">Date(dd/mm/yyyy e.g. 21/10/2021)</label>
+                <input type="text" id="date" name="date" required>
+                <br>
+
+                <label for="amount">Amount(no cents allowed)</label>
+                <input type="number" id="amount" name="amount" step="0.01" placeholder="Enter amount" required>
+                <br>
+
+                <input id="submit" name="submit" type="submit" value="submit"/>
+        </form>
+        <p id="no_expenses" th:if="${#lists.isEmpty(expenses)}"></p>
+
+        </section>
+</div>
+</body>
+
+</html>

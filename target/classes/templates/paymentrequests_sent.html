@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head></head>
+<body>
+<div layout:fragment="contents">
+    <section class="expenseList">
+        <h2>People that owe me</h2>
+<!--        <p id="no_payment_requests_sent" th:if="${#lists.isEmpty(paymentRequests)}">Nobody owes you anything!</p>-->
+
+
+        <table th:unless="${#lists.isEmpty(paymentRequests)}">
+            <thead>
+            <tr>
+                <th>Who</th>
+                <th>What</th>
+                <th>Due in (days)</th>
+                <th>How much</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="paymentRequest : ${paymentRequestsSent}">
+                <td th:text="${#strings.substringBefore(paymentRequest.personWhoShouldPayBack.email, '@')}"></td>
+                <td th:text="${paymentRequest.expense.description}"></td>
+                <td th:text="${paymentRequest.daysLeftToPay()}"></td>
+                <td th:text="${paymentRequest.amountToPay}"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>Total Unpaid</td>
+                <td></td>
+                <td></td>
+                <td id="grand_total" th:text="${grand_total}"></td>
+            </tr>
+            </tfoot>
+        </table>
+        <p id="no_payment_requests_sent" th:if="${#lists.isEmpty(paymentRequestsSent)}">Nobody owes you anything!</p>
+
+
+
+    </section>
+</div>
+</body>
+
+</html>

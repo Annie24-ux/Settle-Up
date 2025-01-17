@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head></head>
+<body>
+<div layout:fragment="contents">
+    <section class="expenseList">
+
+        <h1>Submit a payment request for the following expense</h1>
+
+        <table>
+            <tr>
+                <td>Date</td>
+                <td></td>
+                <td></td>
+                <td th:id="expense_date" th:text="${handleExpense.date}"></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td></td>
+                <td></td>
+                <td th:id="expense_description" th:text="${handleExpense.description}"></td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td></td>
+                <td></td>
+                <td th:id="expense_amount" th:text="${handleExpense.amount}"></td>
+            </tr>
+        </table>
+
+        <h1>Previous Payment Request for this expense</h1>
+
+        <table>
+            <tr>
+                <th>Who</th>
+                <th>Due</th>
+                <th>Paid?</th>
+                <th>How Much</th>
+            </tr>
+            <tr th:each="request:${handleExpense.listOfPaymentRequests}">
+                <td th:id="'paymentrequest_who_' + ${request.id}" th:text="${request.getPersonWhoShouldPayBack.getName}"></td>
+                <td th:id="'paymentrequest_date_' + ${request.id}" th:text="${request.getDueDate}"></td>
+                <td th:id="'paymentrequest_paid_' + ${request.id}" th:text="${request.isPaid}"></td>
+                <td th:id="'paymentrequest_amount_' + ${request.id}" th:text="${request.getAmountToPay}"></td>
+            </tr>
+        </table>
+
+        <form method="post" action="/paymentrequest.action">
+            <label>The email address of the person that should pay you</label>
+            <br>
+            <input id="email" name="email" type="email">
+            <br>
+            <label>The amount they should pay (maximum ZAR 300.00)</label>
+            <br>
+            <input id="amount" name="amount" type="number">
+            <br>
+            <label>By when must this claim be settled (dd/mm/yyyy)</label>
+            <br>
+            <input id="due_date" name="due_date" type="date">
+            <br>
+            <input id="submit" name="submit" type="submit" value="submit"/>
+        </form>
+
+        <p id="no_expenses" th:if="${#lists.isEmpty(expenses)}"></p>
+    </section>
+</div>
+</body>
+
+</html>
