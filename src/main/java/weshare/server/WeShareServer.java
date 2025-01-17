@@ -1,8 +1,5 @@
 package weshare.server;
 
-/*
- ** DO NOT CHANGE!!
- */
 
 import io.javalin.Javalin;
 import io.javalin.apibuilder.EndpointGroup;
